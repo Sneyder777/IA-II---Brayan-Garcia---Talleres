@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Salidas pesadas (descomenta si no quieres versionar resultados)
+# **/resultados/*
+# !**/resultados/.gitkeep
