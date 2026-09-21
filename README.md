@@ -7,7 +7,7 @@ Repositorio de talleres de **Inteligencia Artificial II**.
 | **Autor** | Brayan Sneyder Garcia Camacho |
 | **Materia** | Inteligencia Artificial II |
 | **Lenguaje** | Python 3.10+ |
-| **Librerías base** | OpenCV, NumPy |
+| **Librerías base** | OpenCV, NumPy, Matplotlib, Scikit-Learn |
 | **Licencia** | MIT |
 
 ## Objetivo
@@ -26,6 +26,10 @@ sus recursos de entrada y sus resultados viven en su propia carpeta.
 | 04 | `sesion_4_convolucion/` | Convolución 2D, Filtro de Media, Gaussiano y Mediana | ✅ |
 | 05 | `sesion_5_gradientes_bordes/` | Operadores de Sobel, Algoritmo de Canny | ✅ |
 | 06 | `sesion_6_contornos/` | `findContours`, Bounding Box, Momentos espaciales, área y centroide | ✅ |
+| 09 | `sesion_9_knn/` | K-Vecinos Más Cercanos (KNN), distancia Euclidiana, maldición de la dimensionalidad | ✅ |
+| 10 | `sesion_10_svm/` | Máquinas de Vectores de Soporte (SVM), hiperplanos, Kernel Trick (lineal vs RBF) | ✅ |
+| 11 | `sesion_11_perceptron/` | El Perceptrón, ecuación forward, compuertas lógicas (AND/OR) | ✅ |
+| 12 | `sesion_12_mlp/` | Redes Neuronales Densas / Perceptrón Multicapa (MLP), forward pass con NumPy | ✅ |
 
 > Los talleres numerados con el prefijo `taller-NN/` siguen la plantilla base del repo.
 > Los talleres de las clases del docente Amaury Giovanni Méndez Aguirre se agregan como
@@ -44,9 +48,9 @@ sus recursos de entrada y sus resultados viven en su propia carpeta.
 │   ├── recursos/
 │   └── resultados/
 └── sesion_N_tema/                   # una carpeta por sesión de clase
-    ├── src/                         # scripts de Python (incluye generador de imagen de prueba)
+    ├── src/                         # scripts de Python
     ├── docs/                        # respuestas_analiticas.md con las respuestas escritas
-    ├── data/                        # imágenes de entrada (contenido no versionado)
+    ├── data/                        # imágenes/datos de entrada (contenido no versionado)
     └── output/                      # resultados generados al correr los scripts
 ```
 
@@ -65,6 +69,43 @@ python verificar_entorno.py
 ```
 
 ## Uso
+
+```bash
+# Taller base
+python taller_1/main.py
+
+# Visión por computador (ejemplo con la Sesión 6)
+cd sesion_6_contornos
+python src/generar_imagen_monedas.py
+python src/taller_lab_clasificador_formas.py --img data/monedas.jpg --umbral-area 1500
+
+# Machine Learning clásico y redes neuronales (no necesitan imágenes de entrada)
+cd ../sesion_9_knn
+python src/taller_lab_knn_clasificador.py
+
+cd ../sesion_10_svm
+python src/taller_lab_svm_fronteras.py
+
+cd ../sesion_11_perceptron
+python src/taller_lab_perceptron_or.py
+
+cd ../sesion_12_mlp
+python src/taller_lab_mlp_matrices.py
+```
+
+Consulta el `docs/respuestas_analiticas.md` de cada sesión para ver las respuestas
+a las preguntas de discusión, y la carpeta `output/` (cuando aplica) para los
+resultados de ejemplo.
+
+## Convención de commits
+
+Mensajes cortos en presente, con prefijo del taller o sesión:
+
+```
+taller-01: agrega lectura y conversión a escala de grises
+sesion-12: agrega forward pass de MLP con NumPy
+docs: actualiza tabla de talleres
+```
 
 ```bash
 # Taller base
